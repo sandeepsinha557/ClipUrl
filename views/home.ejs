@@ -18,7 +18,7 @@
 
     <% if (locals.id) { %>
       <div class="generated-url">
-        ✅ URL Generated: <strong><a href="http://localhost:8001/url/<%= id %>" target="_blank">http://localhost:8001/url/<%= id %></a></strong>
+        ✅ URL Generated: <strong><a href="<%= baseUrl %>/url/<%= id %>" target="_blank"><%= baseUrl %>/url/<%= id %></a></strong>
       </div>
     <% } %>
 

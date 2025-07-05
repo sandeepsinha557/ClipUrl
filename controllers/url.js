@@ -1,5 +1,8 @@
 const {nanoid} = require("nanoid");
 const URL = require('../models/url')
+const BASE_URL = process.env.BASE_URL || `http://localhost:3000`;
+
+
 async function handleGenerateNewShortURL(req , res){
     const shortID = nanoid(8);
     const body = req.body;
@@ -14,7 +17,7 @@ async function handleGenerateNewShortURL(req , res){
         createdBy: req.user._id,
    });
 
-    return res.render('home',{id : shortID})
+    return res.render('home', {id: shortID,baseUrl: BASE_URL});
     return res.json({id : shortID})
 }
 

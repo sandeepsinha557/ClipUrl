@@ -17,6 +17,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.resolve('./public')));
 
 const MONGO_URL = process.env.MONGO_URL;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+
 
 connectToMongoDB(MONGO_URL)
 .then (()=> console.log("MongoDB connected"))
