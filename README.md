@@ -16,3 +16,15 @@ Users can shorten URLs, manage their links, and track analytics. Only authentica
 - 🛡 **Secure APIs** – Protected routes, password hashing, input validation  
 - 🎨 **Frontend** – Server-side rendered using EJS templates  
 - ☁️ **Deployment Ready** – Works with MongoDB Atlas and Render/Vercel  
+
+---
+
+## 🛠 Tech Stack  
+
+- **Backend**: Node.js, Express.js  
+- **Frontend**: EJS, CSS  
+- **Database**: MongoDB (Mongoose ODM)  
+- **Auth & Security**: JWT, bcrypt  
+- **Other Libraries**: nanoid for shortId generation  
+
+---
