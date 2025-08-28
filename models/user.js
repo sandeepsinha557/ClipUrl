@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     role:{
         type: String,
         required:true,
-        default:"NORMAL"
+        default:"normal"
     }
 
 
@@ -25,5 +25,19 @@ const userSchema = new mongoose.Schema({
 },{timestamps:true});
 
 const User = mongoose.model('user', userSchema);
+
+// Expose functions to allow mocking in tests
+let originalFindOne = User.findOne;
+let originalCreate = User.create;
+
+User._setTestMocks = (findOneMock, createMock) => {
+  User.findOne = findOneMock;
+  User.create = createMock;
+};
+
+User._clearTestMocks = () => {
+  User.findOne = originalFindOne;
+  User.create = originalCreate;
+};
 
 module.exports = User;
